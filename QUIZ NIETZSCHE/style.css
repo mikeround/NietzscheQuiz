@@ -1,0 +1,227 @@
+/* Estilos Generales */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f1eb; /* Un tono pergamino claro */
+    background-image: url('https://www.transparenttextures.com/patterns/otis-redding.png'); /* Textura sutil */
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.quiz-container {
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    padding: 30px 40px;
+    width: 90%;
+    max-width: 700px;
+    text-align: center;
+    border: 1px solid #dcdcdc;
+    overflow: hidden; /* Para contener elementos flotantes o con márgenes */
+}
+
+/* Cabecera */
+header {
+    margin-bottom: 30px;
+    border-bottom: 2px dashed #a08d65; /* Línea divisoria estilo antiguo */
+    padding-bottom: 20px;
+}
+
+header h1 {
+    font-family: 'Merriweather', serif;
+    color: #5a4a3a; /* Marrón oscuro */
+    margin-bottom: 5px;
+    font-size: 2.5em; /* Más grande */
+}
+
+header h2 {
+    font-family: 'Merriweather', serif;
+    color: #a08d65; /* Marrón más claro */
+    font-weight: 400;
+    font-style: italic;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+}
+
+/* Barra de Progreso */
+#progress-container {
+    margin-top: 15px;
+    font-size: 0.9em;
+    color: #666;
+}
+
+#progress-bar-full {
+    width: 100%;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    height: 10px;
+    margin-top: 5px;
+    overflow: hidden;
+}
+
+#progress-bar {
+    height: 100%;
+    width: 0%; /* Se actualizará con JS */
+    background-color: #a08d65; /* Marrón acorde */
+    border-radius: 5px;
+    transition: width 0.3s ease-in-out;
+}
+
+/* Área de Pregunta */
+#question-area {
+    margin-bottom: 25px;
+}
+
+#question-text {
+    font-size: 1.3em; /* Tamaño adecuado para lectura */
+    color: #444;
+    line-height: 1.6;
+    min-height: 60px; /* Espacio para evitar saltos */
+    font-weight: 500;
+}
+
+/* Área de Opciones */
+#options-area {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espacio entre botones */
+    margin-bottom: 25px;
+}
+
+.option-btn {
+    background-color: #f8f8f8;
+    border: 2px solid #dcdcdc;
+    border-radius: 8px;
+    padding: 15px 20px;
+    font-size: 1.1em;
+    color: #555;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    width: 100%;
+    text-align: left;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.option-btn:hover:not(:disabled) {
+    background-color: #e9e5dc; /* Hover sutil */
+    border-color: #a08d65;
+    transform: translateY(-2px); /* Efecto ligero al pasar el ratón */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.option-btn:disabled {
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+/* Estilos para respuestas correctas/incorrectas */
+.option-btn.correct {
+    background-color: #d4edda; /* Verde claro */
+    border-color: #74c69d;
+    color: #155724; /* Verde oscuro */
+    font-weight: bold;
+}
+
+.option-btn.incorrect {
+    background-color: #f8d7da; /* Rojo claro */
+    border-color: #f5c6cb;
+    color: #721c24; /* Rojo oscuro */
+    font-weight: bold;
+}
+
+/* Área de Feedback */
+#feedback-area {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 8px;
+    min-height: 80px; /* Espacio para feedback */
+    background-color: #f9f9f9;
+    border: 1px dashed #ccc;
+    display: flex; /* Alinea intentos y feedback */
+    flex-direction: column;
+    justify-content: center;
+}
+
+#attempts-left {
+    font-weight: bold;
+    color: #a08d65; /* Marrón */
+    margin-bottom: 10px; /* Espacio antes del texto de feedback */
+}
+
+#feedback-text {
+    font-size: 1em;
+    line-height: 1.5;
+    font-style: italic;
+    color: #555;
+    margin: 0; /* Quita margen por defecto del párrafo */
+}
+
+#feedback-text.correct-feedback {
+    color: #155724; /* Verde oscuro */
+    font-weight: 500;
+}
+
+#feedback-text.incorrect-feedback {
+    color: #721c24; /* Rojo oscuro */
+    font-weight: 500;
+}
+
+/* Área de Resultados */
+#results-area {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #e9e5dc;
+    border-radius: 10px;
+}
+
+#results-area h2 {
+     font-family: 'Merriweather', serif;
+     color: #5a4a3a;
+     margin-bottom: 15px;
+}
+
+#restart-btn {
+    background-color: #a08d65; /* Marrón */
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1.1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    margin-top: 15px;
+}
+
+#restart-btn:hover {
+    background-color: #8a7a5c; /* Marrón más oscuro */
+}
+
+/* Responsividad */
+@media (max-width: 600px) {
+    .quiz-container {
+        padding: 20px;
+        width: 95%;
+    }
+
+    header h1 {
+        font-size: 2em;
+    }
+     header h2 {
+        font-size: 1.3em;
+    }
+
+    .option-btn {
+        font-size: 1em;
+        padding: 12px 15px;
+    }
+
+    #question-text {
+        font-size: 1.15em;
+    }
+}

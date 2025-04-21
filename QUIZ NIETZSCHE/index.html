@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Filosófico: Nietzsche</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="quiz-container">
+        <header>
+            <h1>Quiz Filosófico</h1>
+            <h2>Friedrich Nietzsche</h2>
+            <div id="progress-container">
+                <p>Pregunta <span id="current-question">1</span> de <span id="total-questions">?</span></p>
+                <div id="progress-bar-full">
+                    <div id="progress-bar"></div>
+                </div>
+            </div>
+        </header>
+
+        <div id="question-area">
+            <p id="question-text">Cargando pregunta...</p>
+        </div>
+
+        <div id="options-area">
+            <button class="option-btn" id="option-a"></button>
+            <button class="option-btn" id="option-b"></button>
+        </div>
+
+        <div id="feedback-area">
+             <p id="attempts-left">Intentos restantes: 2</p>
+             <p id="feedback-text"></p>
+        </div>
+
+         <div id="results-area" style="display: none;">
+            <h2>¡Quiz Completado!</h2>
+            <p>Has finalizado el desafío filosófico.</p>
+            <button id="restart-btn">Jugar de Nuevo</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
